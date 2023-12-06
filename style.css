@@ -18,44 +18,48 @@ body{
 #carrejaune {
   height: 200px;
   width: 200px;
-  margin: 50px; 
+  margin: 30px; 
 }
 
 #carrerouge{
   position: flex;
   left: 10%;
   transform: translateX(-50%);
-  
+  border-radius: 50%;
+  border-color: red;
   height: 200px;
   width: 200px;
-  background: linear-gradient(90deg, #C70039, #FF5733);
+  background: linear-gradient(90deg, #C70039, #fd7253);
 }
 
 #carrebleu{
   position: flex;
   left: 10%;
   transform: translateX(-50%);
-  
+  border-radius: 50%;
+  border-color: blue;
   height: 200px;
   width: 200px;
-  background: linear-gradient(90deg,  #5dade2, #85c1e9);
+  background: linear-gradient(90deg,  #56a1d3, #b1d6ee);
 }
 
 #carrevert{
   position: flex;
   left: 10%;
   transform: translateX(-50%);
-  
+  border-radius: 50%;
+  border-color: green;
   height: 200px;
   width: 200px;
-  background: linear-gradient(90deg, #2ecc71, #58d68d);
+  background: linear-gradient(90deg, #2eb867, #7cf1ad);
 }
 
 #carrejaune{
   position: flex;
   left: 10%;
   transform: translateX(-50%);
-  
+  border-radius: 50%;
+  border-color: yellow;
   height: 200px;
   width: 200px;
   background: linear-gradient(90deg,#f1c40f
