@@ -1,0 +1,49 @@
+body{
+  background: #353535;
+}
+
+#container{
+  position: absolute;
+  left: 50%;
+}
+
+#carrerouge{
+  position: flex;
+  left: 10%;
+  transform: translateX(-50%);
+  
+  height: 200px;
+  width: 200px;
+  background: linear-gradient(90deg, #C70039, #FF5733);
+}
+
+#carrebleu{
+  position: flex;
+  left: 10%;
+  transform: translateX(-50%);
+  
+  height: 200px;
+  width: 200px;
+  background: linear-gradient(90deg,  #5dade2, #85c1e9);
+}
+
+#carrevert{
+  position: flex;
+  left: 10%;
+  transform: translateX(-50%);
+  
+  height: 200px;
+  width: 200px;
+  background: linear-gradient(90deg, #2ecc71, #58d68d);
+}
+
+#carrejaune{
+  position: flex;
+  left: 10%;
+  transform: translateX(-50%);
+  
+  height: 200px;
+  width: 200px;
+  background: linear-gradient(90deg,#f1c40f
+  ,#fad7a0);
+}
