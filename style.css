@@ -1,10 +1,24 @@
 body{
-  background: #353535;
+  background: url(heheboi.png);
 }
 
-#container{
+#container1{
   position: absolute;
-  left: 50%;
+  left: 25%;
+}
+
+#container2{
+  position: absolute;
+  left: 100%;
+}
+
+#carrerouge,
+#carrebleu,
+#carrevert,
+#carrejaune {
+  height: 200px;
+  width: 200px;
+  margin: 50px; 
 }
 
 #carrerouge{

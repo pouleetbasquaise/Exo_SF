@@ -13,16 +13,18 @@
       
     
     
-    <div id="container">
+    <div id="container1">
+
+      <div id="container2">
+          <div>
+          <button id="carrerouge" onclick="play()">
+          </button>
+          </div>
 
         <div>
-        <button id="carrerouge" onclick="play()">
-        </button>
+          <button id="carrevert" onclick="play()">
+          </button>
         </div>
-
-      <div>
-        <button id="carrevert" onclick="play()">
-        </button>
       </div>
 
       <div>
@@ -35,9 +37,10 @@
         </button>
       </div>
     </div>
-      
-    <audio id="audio" src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3"></audio>
 
+    <audio id="audio">
+      <source src="bip.wav" type="audio/wav">
+    </audio>
   
     </body>
 </html>

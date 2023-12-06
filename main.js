@@ -10,3 +10,8 @@ function play(params) {
     var audio = document.getElementById("audio");
     audio.play();
 }
+
+function click(newColor) {
+    var colour = document.getElementById("change");
+    colour.style.color = newColor;
+}
