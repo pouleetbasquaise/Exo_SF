@@ -6,9 +6,9 @@ button.addEventListener("click", (event) => {
     button.innerHTML = `Nombre de clics : ${event.detail}`;
 })
 
-function play(params) {
+function sound(params) {
     var audio = document.getElementById("audio");
-    audio.play();
+    audio.sound();
 }
 
 function click(newColor) {

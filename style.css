@@ -62,6 +62,15 @@ body{
   border-color: yellow;
   height: 200px;
   width: 200px;
-  background: linear-gradient(90deg,#f1c40f
-  ,#fad7a0);
+  background: linear-gradient(90deg,#f1c40f,#fad7a0);
+}
+#start{
+  position: relative;
+  left: 60%;
+  height: 100px;
+  width: 200px;
+  transform: translateX(-50%);
+  background: url(jerry.png);
+  background-size: 125px;
+
 }
