@@ -17,7 +17,27 @@ function click(newColor) {
 }
 let sequence = [];
 let humanSequence = [];
-const startButton = document.querySelector('.js-start');
+let score = 0;
+
+
+function genSequence() { //Creation fonction de création de séquence 
+    const colors = ['blue','green','red','yellow']; //Array colors avec 4 couleurs allant de 0 à3.
+    const rdm = colors[Math.floor(Math.random() * 4)]; //constante rdm valant la constante colors randomiser allant de 0 à 4 en excluant 4. le floor est la pour descendre à un chiffre rond. (ex : 3.564 => 3)
+    sequence.push(rdm);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //function start(){
     //let colourGame = ["vert","rouge","rouge","bleu"];
@@ -28,8 +48,8 @@ const startButton = document.querySelector('.js-start');
 
     
 //}
-function startGame() {
-    startButton.classlist.add('hidden');
-}
+//function startGame() {
+ //   startButton.classlist.add('hidden');
+//}
 
-startButton.addEventListener('click', startGame);
+//startButton.addEventListener('click', startGame);
