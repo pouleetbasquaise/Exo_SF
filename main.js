@@ -15,16 +15,47 @@ function click(newColor) {
     var colour = document.getElementById("change");
     colour.style.color = newColor;
 }
-let sequence = [];
-let humanSequence = [];
-let score = 0;
+
+let sequence = [];//Creation du tableau "sequence", va se voir via fonction ajouter des couleurs de façon aléatoire
+let humanSequence = [];//Creation du tableau "humainSequence", aura pour but d'enregistrer les input du joueur
+let score = 0;//creation du score en vue de faire un scoreboard
 
 
 function genSequence() { //Creation fonction de création de séquence 
-    const colors = ['blue','green','red','yellow']; //Array colors avec 4 couleurs allant de 0 à3.
+    const colors = ['blue','green','red','yellow']; //Array colors avec 4 couleurs allant de 0 à 3.
     const rdm = colors[Math.floor(Math.random() * 4)]; //constante rdm valant la constante colors randomiser allant de 0 à 4 en excluant 4. le floor est la pour descendre à un chiffre rond. (ex : 3.564 => 3)
-    sequence.push(rdm);
+    sequence.push(rdm); // ajoute en dernière position dans le tableau la dernière couleurs choisi
+    
+    return rdm;
 }
+function levelGame() {
+    for (let difficult = 0; difficult < array.length; index++) {
+        
+        
+    }
+}
+
+function checkGen() {
+    for (i = 0; i < sequence.length; i++){
+        if (humanSequence === sequence) {
+            //ajouter niveau suivant, renitialiser la sequence
+            return;
+        }
+        else{
+            uLoose();
+            return;
+        }
+
+    }
+}
+
+function uLoose() {
+    alert("Tu as perdu !")
+    sequence = [];
+    humanSequence = [];
+    score = 0;
+}
+
 
 
 
