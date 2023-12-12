@@ -27,10 +27,10 @@ function upScore() {//creation fonction d'update de score
 }
 
 function nextLvl() { //Creation fonction changement de niveau
-    humanSequence = [];
-    score++;
-    upScore();
-    
+    humanSequence = [];//reinitialisation de humanSequence 
+    score++;//ajout de +1 au score
+    upScore();//appel fonction upScore pour le mettre à jour sur le scoreboard
+
         
     
 }
@@ -54,6 +54,7 @@ function uLoose() {//creation fonction "uLosse"
     sequence = [];//reinitialisation de la sequence 
     humanSequence = [];//reinitialisation d'humanSequence
     score = 0;//reinitialisation du score
+    
 }
 
 
