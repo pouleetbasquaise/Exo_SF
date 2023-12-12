@@ -1,12 +1,6 @@
-//Faire un simon
-
 const button = document.querySelector("button");
 
-button.addEventListener("click", (event) => {
-    button.innerHTML = `Nombre de clics : ${event.detail}`;
-})
-
-function sound(params) {
+function sound() {
     var audio = document.getElementById("audio");
     audio.sound();
 }
@@ -21,18 +15,24 @@ let humanSequence = [];//Creation du tableau "humainSequence", aura pour but d'e
 let score = 0;//creation du score en vue de faire un scoreboard
 
 
-function genSequence() { //Creation fonction de création de séquence 
+function genSequence() { //Creation fonction de generation de séquence 
     const colors = ['blue','green','red','yellow']; //Array colors avec 4 couleurs allant de 0 à 3.
     const rdm = colors[Math.floor(Math.random() * 4)]; //constante rdm valant la constante colors randomiser allant de 0 à 4 en excluant 4. le floor est la pour descendre à un chiffre rond. (ex : 3.564 => 3)
     sequence.push(rdm); // ajoute en dernière position dans le tableau la dernière couleurs choisi
-    
-    return rdm;
 }
-function levelGame() {
-    for (let difficult = 0; difficult < array.length; index++) {
+
+function upScore() {//creation fonction d'update de score
+    newScore = document.getElementById("score");//creation de la variable newScore qui ira prendre l'Id score dans mon HTML
+    newScore.innerText = 'Score: ' + score;//Vient modifier la balise score afin que le score colle au niveau. (Si j'ai passé un niveau, que mon score gagne +1)
+}
+
+function nextLvl() { //Creation fonction changement de niveau
+    humanSequence = [];
+    score++;
+    upScore();
+    
         
-        
-    }
+    
 }
 
 function checkGen() {
@@ -49,11 +49,11 @@ function checkGen() {
     }
 }
 
-function uLoose() {
-    alert("Tu as perdu !")
-    sequence = [];
-    humanSequence = [];
-    score = 0;
+function uLoose() {//creation fonction "uLosse"
+    alert("Tu as perdu !")//Une alerte explicite
+    sequence = [];//reinitialisation de la sequence 
+    humanSequence = [];//reinitialisation d'humanSequence
+    score = 0;//reinitialisation du score
 }
 
 
@@ -69,18 +69,3 @@ function uLoose() {
 
 
 
-
-//function start(){
-    //let colourGame = ["vert","rouge","rouge","bleu"];
-    // for (let i = 0; i < 4; i++) {
-    //     colourGame[i] = 3*Math.random();//0 = Jaune =,1 vert 2 bleu 3 rouge
-    // 
-    //colourGame[0]
-
-    
-//}
-//function startGame() {
- //   startButton.classlist.add('hidden');
-//}
-
-//startButton.addEventListener('click', startGame);
