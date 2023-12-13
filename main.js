@@ -21,6 +21,8 @@ function genSequence() { //Creation fonction de generation de séquence
     sequence.push(rdm); // ajoute en dernière position dans le tableau la dernière couleurs choisi
 }
 
+
+
 function upScore() {//creation fonction d'update de score
     newScore = document.getElementById("score");//creation de la variable newScore qui ira prendre l'Id score dans mon HTML
     newScore.innerText = 'Score: ' + score;//Vient modifier la balise score afin que le score colle au niveau. (Si j'ai passé un niveau, que mon score gagne +1)
