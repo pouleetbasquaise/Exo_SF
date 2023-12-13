@@ -2,7 +2,7 @@ const button = document.querySelector("button");
 
 function sound() {
     var audio = document.getElementById("audio");
-    audio.sound();
+    audio.play();
 }
 
 function click(newColor) {
@@ -16,7 +16,7 @@ let score = 0;//creation du score en vue de faire un scoreboard
 
 
 function genSequence() { //Creation fonction de generation de séquence 
-    const colors = ['blue','green','red','yellow']; //Array colors avec 4 couleurs allant de 0 à 3.
+    const colors = ['bleu','vert','rouge','jaune']; //Array colors avec 4 couleurs allant de 0 à 3.
     const rdm = colors[Math.floor(Math.random() * 4)]; //constante rdm valant la constante colors randomiser allant de 0 à 4 en excluant 4. le floor est la pour descendre à un chiffre rond. (ex : 3.564 => 3)
     sequence.push(rdm); // ajoute en dernière position dans le tableau la dernière couleurs choisi
 }
@@ -40,7 +40,7 @@ function nextLvl() { //Creation fonction changement de niveau
 function checkGen() {
     for (i = 0; i < sequence.length; i++){
         if (humanSequence === sequence) {
-            //ajouter niveau suivant, renitialiser la sequence
+            nextLvl();
             return;
         }
         else{
@@ -59,18 +59,37 @@ function uLoose() {//creation fonction "uLosse"
     
 }
 
+//function start() {
+//    for (i = 0; i < 4; i++) {
+//        genSequence();
+//    }
+//    console.log(sequence);
+//}
+
 function start() {
-    
+    sequence = [];
+    for (i = 0; i < 4; i++) {
+        genSequence();
+    }
+    console.log("Séquence de victoire : ",sequence);
+    displaySequence();
 }
 
+function highlightButton(color) {
+    console.log(color); 
+   let buttonColor = document.getElementById("carre" + color);
+   console.log(buttonColor);
+   buttonColor.style.background = "white";//uttonColor.style.background permet d'accéder au css de ton element. CSS c'est du texte donc il a compris que "white" c'est la couleurs voulu
+}
 
+function displaySequence() {
+    for (let i = 0; i < sequence.length; i++) {
+        setTimeout(function() {
+            highlightButton(sequence[i]);
+        }, 1000 * i);// défini un délai en fonction de la valeur de i, exécutera la fonction dans i*1000ms
+    }
+}
 
-
-
-
-
-
-
-
+start();
 
 
