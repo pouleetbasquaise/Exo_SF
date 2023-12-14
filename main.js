@@ -66,30 +66,30 @@ function uLoose() {//creation fonction "uLosse"
 //    console.log(sequence);
 //}
 
-function start() {
-    sequence = [];
-    for (i = 0; i < 4; i++) {
+function start() { //definition fonction start
+    sequence = []; // creation array sequence
+    for (i = 0; i < 4; i++) { // condition for avec 1 allant de 0 à 3 generant la fonction genSequence 4 fois.
         genSequence();
     }
-    console.log("Séquence de victoire : ",sequence);
-    displaySequence();
+    console.log("Séquence de victoire : ",sequence);//console log d'une string avec la sequence.
+    displaySequence();//appel de la fonction displaySequence().
 }
 
-function highlightButton(color) {
-    console.log(color); 
-   let buttonColor = document.getElementById("carre" + color);
-   console.log(buttonColor);
-   buttonColor.style.background = "white";//uttonColor.style.background permet d'accéder au css de ton element. CSS c'est du texte donc il a compris que "white" c'est la couleurs voulu
+function highlightButton(color) {//definition de la fonction avec en parametre colorhighlightButton()
+    console.log(color); //un console log donnant litteralement chaque couleur une part une
+   let buttonColor = document.getElementById("carre" + color);//creation de ma variable buttonColor recherchant dans mon HTML l'ID "carre" avec le parametre couleur. Ca permet d'economiser des lignes de code et de ne pas à avoir ecrire chaque nom.
+   console.log(buttonColor);//console log de buttonColor. Donne l'ID complet, quel balise il a et surtout confirme qu'on tombe bien sur le bon bouton.
+   buttonColor.style.background = "white";//buttonColor.style.background permet d'accéder au css de ton element. CSS c'est du texte donc il a compris que "white" c'est la couleurs voulu
 }
 
-function displaySequence() {
-    for (let i = 0; i < sequence.length; i++) {
-        setTimeout(function() {
-            highlightButton(sequence[i]);
+function displaySequence() {//Definition de la fonction displaySequence()
+    for (let i = 0; i < sequence.length; i++) {//boucle for avec i valant 0 et prenant +1 tant qu'il est inférieur à la taille de la sequence
+        setTimeout(function() {//creation fonction anonyme dans un setTimeout. Il permet de mettre un delais entre chaque couleur. 
+            highlightButton(sequence[i]);//appel de la fonction highlightbutton avec en parametre la sequence
         }, 1000 * i);// défini un délai en fonction de la valeur de i, exécutera la fonction dans i*1000ms
     }
 }
 
-start();
+start();//appel de la fonction start()
 
 
