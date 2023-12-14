@@ -37,14 +37,14 @@ function nextLvl() { //Creation fonction changement de niveau
     
 }
 
-function checkGen() {
-    for (i = 0; i < sequence.length; i++){
-        if (humanSequence === sequence) {
-            nextLvl();
+function checkGen() {//definition fonction checkGen
+    for (i = 0; i < sequence.length; i++){//condition for avec i valant 0 prenant +1 si inférieur a la taille de la sequence bouclant tant que cette condition est active 
+        if (humanSequence === sequence) {//condition if avec recherche d'égalité strict entre humanSequence et sequence
+            nextLvl();//si True, alors appel de la fonction nextLvl()
             return;
         }
         else{
-            uLoose();
+            uLoose();//Sinon appel de la fonction uLoose()
             return;
         }
 
