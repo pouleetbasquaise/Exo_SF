@@ -73,6 +73,8 @@ function restorBackgColor(color) {
     else if(document.getElementById === "carrejaune"){
         buttonColor.style.background = yellowColor;
     }   
+    else
+        console.log("hein...?");
 }
 
 //                  test va jusque la 
