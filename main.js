@@ -79,7 +79,7 @@ function highlightButton(color) {//definition de la fonction avec en parametre c
     console.log(color); //un console log donnant litteralement chaque couleur une part une
    let buttonColor = document.getElementById("carre" + color);//creation de ma variable buttonColor recherchant dans mon HTML l'ID "carre" avec le parametre couleur. Ca permet d'economiser des lignes de code et de ne pas à avoir ecrire chaque nom.
    console.log(buttonColor);//console log de buttonColor. Donne l'ID complet, quel balise il a et surtout confirme qu'on tombe bien sur le bon bouton.
-   buttonColor.style.background = "white";//buttonColor.style.background permet d'accéder au css de ton element. CSS c'est du texte donc il a compris que "white" c'est la couleurs voulu
+   buttonColor.style.background = "white";//buttonColor.style.background permet d'accéder au css de l'element. CSS étant du texte, il a compris que "white" est la couleurs voulu
 }
 
 function displaySequence() {//Definition de la fonction displaySequence()
