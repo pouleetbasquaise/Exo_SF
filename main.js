@@ -26,31 +26,21 @@ function nextLvl() { //Creation fonction changement de niveau
     start();//relance le jeu
 }
 
-function checkGen() {//definition fonction checkGen
-    for (i = 0; i < sequence.length; i++){//condition for avec i valant 0 prenant +1 si inférieur a la taille de la sequence bouclant tant que cette condition est active 
-        if (humanSequence.length === sequence.length) {//condition if avec recherche d'égalité strict entre humanSequence et sequence
-            nextLvl();//si True, alors appel de la fonction nextLvl()
-        }
-        else{
-            uLoose();//Sinon appel de la fonction uLoose()
-            return;   
-        }
-
-    }
-}
-
-
 //function checkGen() {//definition fonction checkGen
 //    for (i = 0; i < sequence.length; i++){//condition for avec i valant 0 prenant +1 si inférieur a la taille de la sequence bouclant tant que cette condition est active 
-//        if(humanSequence[i] !== sequence[i]){
-//            uLoose();//Sinon appel de la fonction uLoose()
-//        return;
+//        if (humanSequence.length === sequence.length) {//condition if avec recherche d'égalité strict entre humanSequence et sequence
+//            nextLvl();//si True, alors appel de la fonction nextLvl()
 //        }
-//    }
-//    if (humanSequence.length === sequence.length) {
-//        nextLvl();
+//        else{
+//            uLoose();//Sinon appel de la fonction uLoose()
+//            return;   
+//        }
+//
 //    }
 //}
+
+
+
 
 function uLoose() {//creation fonction "uLosse"
     alert("Tu as perdu !")//Une alerte explicite
@@ -97,7 +87,7 @@ function restorBackgColor(color) {
 
 function start() { //definition fonction start
     sequence = []; // creation array sequence
-    for (i = 0; i < 4; i++) { // condition for avec 1 allant de 0 à 3 generant la fonction genSequence 4 fois.
+    for (i = 0; i < 4; i++) { // condition for avec i allant de 0 à 3 generant la fonction genSequence 4 fois.
         genSequence();
     }
     console.log("Séquence de victoire : ",sequence);//console log d'une string avec la sequence.
@@ -121,6 +111,18 @@ function displaySequence() {//Definition de la fonction displaySequence()
         }, 1000 * i);// défini un délai en fonction de la valeur de i, exécutera la fonction dans i*1000ms
     }
 }
+
+//function checkGen() {//definition fonction checkGen
+//    for (i = 0; i < sequence.length; i++){//condition for avec i valant 0 prenant +1 si inférieur a la taille de la sequence bouclant tant que cette condition est active 
+//        if(humanSequence[i] !== sequence[i]){
+//            uLoose();//Sinon appel de la fonction uLoose()
+//        return;
+//        }
+//    }
+//    if (humanSequence.length === sequence.length) {
+//        nextLvl();
+//    }
+//}
 
 start();//appel de la fonction start()
 
