@@ -23,21 +23,34 @@ function nextLvl() { //Creation fonction changement de niveau
     humanSequence = [];//reinitialisation de humanSequence 
     score++;//ajout de +1 au score
     upScore();//appel fonction upScore pour le mettre à jour sur le scoreboard    
+    start();//relance le jeu
 }
 
 function checkGen() {//definition fonction checkGen
     for (i = 0; i < sequence.length; i++){//condition for avec i valant 0 prenant +1 si inférieur a la taille de la sequence bouclant tant que cette condition est active 
-        if (humanSequence === sequence) {//condition if avec recherche d'égalité strict entre humanSequence et sequence
+        if (humanSequence.length === sequence.length) {//condition if avec recherche d'égalité strict entre humanSequence et sequence
             nextLvl();//si True, alors appel de la fonction nextLvl()
-            return;
         }
         else{
             uLoose();//Sinon appel de la fonction uLoose()
-            return;
+            return;   
         }
 
     }
 }
+
+
+//function checkGen() {//definition fonction checkGen
+//    for (i = 0; i < sequence.length; i++){//condition for avec i valant 0 prenant +1 si inférieur a la taille de la sequence bouclant tant que cette condition est active 
+//        if(humanSequence[i] !== sequence[i]){
+//            uLoose();//Sinon appel de la fonction uLoose()
+//        return;
+//        }
+//    }
+//    if (humanSequence.length === sequence.length) {
+//        nextLvl();
+//    }
+//}
 
 function uLoose() {//creation fonction "uLosse"
     alert("Tu as perdu !")//Une alerte explicite
@@ -82,13 +95,6 @@ function restorBackgColor(color) {
 
 
 
-//function start() {
-//    for (i = 0; i < 4; i++) {
-//        genSequence();
-//    }
-//    console.log(sequence);
-//}
-
 function start() { //definition fonction start
     sequence = []; // creation array sequence
     for (i = 0; i < 4; i++) { // condition for avec 1 allant de 0 à 3 generant la fonction genSequence 4 fois.
@@ -96,6 +102,7 @@ function start() { //definition fonction start
     }
     console.log("Séquence de victoire : ",sequence);//console log d'une string avec la sequence.
     displaySequence();//appel de la fonction displaySequence().
+    //checkGen();
 }
 
 
