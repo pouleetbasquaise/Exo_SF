@@ -1,4 +1,5 @@
-function sound() {
+function userClick(color) {
+    console.log(color);
     var audio = document.getElementById("audio");
     audio.play();
 }
@@ -92,17 +93,22 @@ function start() { //definition fonction start
     }
     console.log("Séquence de victoire : ",sequence);//console log d'une string avec la sequence.
     displaySequence();//appel de la fonction displaySequence().
-    //checkGen();
+    
 }
 
 
 
 function highlightButton(color) {//definition de la fonction avec en parametre colorhighlightButton()
     console.log(color); //un console log donnant litteralement chaque couleur une part une
-   let buttonColor = document.getElementById("carre" + color);//creation de ma variable buttonColor recherchant dans mon HTML l'ID "carre" avec le parametre couleur. Ca permet d'economiser des lignes de code et de ne pas à avoir ecrire chaque nom.
-   console.log(buttonColor);//console log de buttonColor. Donne l'ID complet, quel balise il a et surtout confirme qu'on tombe bien sur le bon bouton.
-   buttonColor.style.background = "white";//buttonColor.style.background permet d'accéder au css de l'element. CSS étant du texte, il a compris que "white" est la couleurs voulu
-}
+    let buttonColor = document.getElementById("carre" + color);//creation de ma variable buttonColor recherchant dans mon HTML l'ID "carre" avec le parametre couleur. Ca permet d'economiser des lignes de code et de ne pas à avoir ecrire chaque nom.
+    console.log(buttonColor);//console log de buttonColor. Donne l'ID complet, quel balise il a et surtout confirme qu'on tombe bien sur le bon bouton.
+    let saveColor = buttonColor.style.background;
+    buttonColor.style.background = "white";//buttonColor.style.background permet d'accéder au css de l'element. CSS étant du texte, il a compris que "white" est la couleurs voulu
+        setTimeout(function() {
+            buttonColor.style.background = saveColor;
+        }, 500);     
+    }
+
 
 function displaySequence() {//Definition de la fonction displaySequence()
     for (let i = 0; i < sequence.length; i++) {//boucle for avec i valant 0 et prenant +1 tant qu'il est inférieur à la taille de la sequence
@@ -112,17 +118,17 @@ function displaySequence() {//Definition de la fonction displaySequence()
     }
 }
 
-//function checkGen() {//definition fonction checkGen
-//    for (i = 0; i < sequence.length; i++){//condition for avec i valant 0 prenant +1 si inférieur a la taille de la sequence bouclant tant que cette condition est active 
-//        if(humanSequence[i] !== sequence[i]){
-//            uLoose();//Sinon appel de la fonction uLoose()
-//        return;
-//        }
-//    }
-//    if (humanSequence.length === sequence.length) {
-//        nextLvl();
-//    }
-//}
+function checkGen() {//definition fonction checkGen
+    for (i = 0; i < sequence.length; i++){//condition for avec i valant 0 prenant +1 si inférieur a la taille de la sequence bouclant tant que cette condition est active 
+        if(humanSequence[i] !== sequence[i]){
+            uLoose();//Sinon appel de la fonction uLoose()
+        return;
+        }
+    }
+    if (humanSequence.length === sequence.length) {
+        nextLvl();
+    }
+}
 
 start();//appel de la fonction start()
 
