@@ -74,7 +74,8 @@ function restorBackgColor(color) {
         buttonColor.style.background = yellowColor;
     }   
     else
-        console.log("hein...?");
+        alert("hein...?");
+        
 }
 
 //                  test va jusque la 
