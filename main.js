@@ -2,10 +2,13 @@ function userClick(color) {
     console.log(color);
     var audio = document.getElementById("audio");
     audio.play();
+    if (userClick = True) {
+        
+    }
 }
 
 let sequence = [];//Creation du tableau "sequence", va se voir via fonction ajouter des couleurs de façon aléatoire
-let humanSequence = [];//Creation du tableau "humainSequence", aura pour but d'enregistrer les input du joueur
+//let humanSequence = [];//Creation du tableau "humanSequence", aura pour but d'enregistrer les input du joueur
 let score = 0;//creation du score en vue de faire un scoreboard
 
 
@@ -21,7 +24,7 @@ function upScore() {//creation fonction d'update de score
 }
 
 function nextLvl() { //Creation fonction changement de niveau
-    humanSequence = [];//reinitialisation de humanSequence 
+    //humanSequence = [];//reinitialisation de humanSequence 
     score++;//ajout de +1 au score
     upScore();//appel fonction upScore pour le mettre à jour sur le scoreboard    
     start();//relance le jeu
@@ -46,7 +49,7 @@ function nextLvl() { //Creation fonction changement de niveau
 function uLoose() {//creation fonction "uLosse"
     alert("Tu as perdu !")//Une alerte explicite
     sequence = [];//reinitialisation de la sequence 
-    humanSequence = [];//reinitialisation d'humanSequence
+    //humanSequence = [];//reinitialisation d'humanSequence
     score = 0;//reinitialisation du score
     
 }
@@ -118,17 +121,17 @@ function displaySequence() {//Definition de la fonction displaySequence()
     }
 }
 
-function checkGen() {//definition fonction checkGen
-    for (i = 0; i < sequence.length; i++){//condition for avec i valant 0 prenant +1 si inférieur a la taille de la sequence bouclant tant que cette condition est active 
-        if(humanSequence[i] !== sequence[i]){
-            uLoose();//Sinon appel de la fonction uLoose()
-        return;
-        }
-    }
-    if (humanSequence.length === sequence.length) {
-        nextLvl();
-    }
-}
+//function checkGen() {//definition fonction checkGen
+//    for (i = 0; i < sequence.length; i++){//condition for avec i valant 0 prenant +1 si inférieur a la taille de la sequence bouclant tant que cette condition est active 
+//        if(humanSequence[i] !== sequence[i]){
+//            uLoose();//Sinon appel de la fonction uLoose()
+//        return;
+//        }
+//    }
+//    if (humanSequence.length === sequence.length) {
+//        nextLvl();
+//    }
+//}
 
 start();//appel de la fonction start()
 
