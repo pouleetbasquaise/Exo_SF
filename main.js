@@ -1,5 +1,5 @@
 let playing = false;
-let y = 0;
+let y = 0;//placeholder de y valant 0
 
 
 function userClick(color) {
@@ -11,15 +11,16 @@ function userClick(color) {
             console.log("correct");
         }
 
-    y++;
-        //console.log(color);
-        //var audio = document.getElementById("audio");
-        //audio.play();    
-        ////compteur.push(color);
-        //console.log("df");
         if (sequence.length == y ) {
             console.log('win');
+            y++;
             nextLvl();
+
+            //console.log(color);
+            //var audio = document.getElementById("audio");
+            //audio.play();    
+            ////compteur.push(color);
+            //console.log("df");
         }
     }
     
@@ -51,11 +52,12 @@ function uLoose() {//creation fonction "uLosse"
     alert("Tu as perdu !")//Une alerte explicite
     sequence = [];//reinitialisation de la sequence 
     newScore = document.getElementById("score");//creation de la variable newScore qui ira prendre l'Id score dans mon HTML
-    }
+    newScore.innerText = 'Score: ' + 0; 
+    score = 0;  
+    y = 0; 
+}
 
 function start() { //definition fonction start
-    //sequence = []; // creation array sequence
-    // condition for avec i allant de 0 à 3 generant la fonction genSequence 4 fois.
     genSequence();
         
     playing = true;
