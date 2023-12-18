@@ -1,22 +1,30 @@
-let compteur = [];
+let playing = false;
+let y = 0;
+
 
 function userClick(color) {
-    console.log(color);
-    var audio = document.getElementById("audio");
-    audio.play();
+    if (playing){
+        if (color != sequence[y]){
+            uLoose();
+        }
+        else {
+            console.log("correct");
+        }
+
+    y++;
+        //console.log(color);
+        //var audio = document.getElementById("audio");
+        //audio.play();    
+        ////compteur.push(color);
+        //console.log("df");
+        if (sequence.length == y ) {
+            console.log('win');
+            nextLvl();
+        }
+    }
     
-        
-     compteur.push(color);
-     console.log(compteur);
-
-
-
-
-//if sequence.lenght == compteur.lenght && position.sequence == position.sequence
-    //ta gagnés sinon t'as perdu 
 }
 
-//avoir un compteur
 
 let sequence = [];//Creation du tableau "sequence", va se voir via fonction ajouter des couleurs de façon aléatoire
 //let humanSequence = [];//Creation du tableau "humanSequence", aura pour but d'enregistrer les input du joueur
@@ -39,37 +47,24 @@ function nextLvl() { //Creation fonction changement de niveau
     score++;//ajout de +1 au score
     upScore();//appel fonction upScore pour le mettre à jour sur le scoreboard    
     start();//relance le jeu
-    compteur = [];
 }
-
-//function checkGen() {//definition fonction checkGen
-//    for (i = 0; i < sequence.length; i++){//condition for avec i valant 0 prenant +1 si inférieur a la taille de la sequence bouclant tant que cette condition est active 
-//        if (humanSequence.length === sequence.length) {//condition if avec recherche d'égalité strict entre humanSequence et sequence
-//            nextLvl();//si True, alors appel de la fonction nextLvl()
-//        }
-//        else{
-//            uLoose();//Sinon appel de la fonction uLoose()
-//            return;   
-//        }
-//
-//    }
-//}
-
-
-
 
 function uLoose() {//creation fonction "uLosse"
     alert("Tu as perdu !")//Une alerte explicite
     sequence = [];//reinitialisation de la sequence 
     //humanSequence = [];//reinitialisation d'humanSequence
-    score = 0;//reinitialisation du score    
+    newScore = document.getElementById("score");//creation de la variable newScore qui ira prendre l'Id score dans mon HTML
+    newScore.innerText = 'Score: ' + 0;//Vient modifier la balise score afin que le score colle au niveau. (Si j'ai passé un niveau, que mon score gagne +1)
+
+    //score = 0;//reinitialisation du score    
 }
 
 function start() { //definition fonction start
-    sequence = []; // creation array sequence
-    for (i = 0; i < 4; i++) { // condition for avec i allant de 0 à 3 generant la fonction genSequence 4 fois.
-        genSequence();
-    }
+    //sequence = []; // creation array sequence
+    // condition for avec i allant de 0 à 3 generant la fonction genSequence 4 fois.
+    genSequence();
+        
+    playing = true;
     console.log("Séquence de victoire : ",sequence);//console log d'une string avec la sequence.
     displaySequence();//appel de la fonction displaySequence().    
 }
@@ -91,22 +86,11 @@ function highlightButton(color) {//definition de la fonction avec en parametre c
 function displaySequence() {//Definition de la fonction displaySequence()
     for (let i = 0; i < sequence.length; i++) {//boucle for avec i valant 0 et prenant +1 tant qu'il est inférieur à la taille de la sequence
         setTimeout(function() {//creation fonction anonyme dans un setTimeout. Il permet de mettre un delais entre chaque couleur. 
+            console.log(sequence[i]);
             highlightButton(sequence[i]);//appel de la fonction highlightbutton avec en parametre la sequence
         }, 1000 * i);// défini un délai en fonction de la valeur de i, exécutera la fonction dans i*1000ms
     }
 }
-
-//function checkGen() {//definition fonction checkGen
-//    for (i = 0; i < sequence.length; i++){//condition for avec i valant 0 prenant +1 si inférieur a la taille de la sequence bouclant tant que cette condition est active 
-//        if(humanSequence[i] !== sequence[i]){
-//            uLoose();//Sinon appel de la fonction uLoose()
-//        return;
-//        }
-//    }
-//    if (humanSequence.length === sequence.length) {
-//        nextLvl();
-//    }
-//}
 
 start();//appel de la fonction start()
 
