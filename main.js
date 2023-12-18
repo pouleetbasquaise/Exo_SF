@@ -27,7 +27,6 @@ function userClick(color) {
 
 
 let sequence = [];//Creation du tableau "sequence", va se voir via fonction ajouter des couleurs de façon aléatoire
-//let humanSequence = [];//Creation du tableau "humanSequence", aura pour but d'enregistrer les input du joueur
 let score = 0;//creation du score en vue de faire un scoreboard
 
 
@@ -43,7 +42,6 @@ function upScore() {//creation fonction d'update de score
 }
 
 function nextLvl() { //Creation fonction changement de niveau
-    //humanSequence = [];//reinitialisation de humanSequence 
     score++;//ajout de +1 au score
     upScore();//appel fonction upScore pour le mettre à jour sur le scoreboard    
     start();//relance le jeu
@@ -52,12 +50,8 @@ function nextLvl() { //Creation fonction changement de niveau
 function uLoose() {//creation fonction "uLosse"
     alert("Tu as perdu !")//Une alerte explicite
     sequence = [];//reinitialisation de la sequence 
-    //humanSequence = [];//reinitialisation d'humanSequence
     newScore = document.getElementById("score");//creation de la variable newScore qui ira prendre l'Id score dans mon HTML
-    newScore.innerText = 'Score: ' + 0;//Vient modifier la balise score afin que le score colle au niveau. (Si j'ai passé un niveau, que mon score gagne +1)
-
-    //score = 0;//reinitialisation du score    
-}
+    }
 
 function start() { //definition fonction start
     //sequence = []; // creation array sequence
