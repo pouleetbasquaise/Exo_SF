@@ -9,23 +9,25 @@ function userClick(color) {
         }
         else {
             console.log("correct");
+            y++;
         }
-
+        
         if (sequence.length == y ) {
             console.log('win');
-            y++;
             nextLvl();
 
-            //console.log(color);
-            //var audio = document.getElementById("audio");
-            //audio.play();    
-            ////compteur.push(color);
+            
+            var audio = document.getElementById("audio");
+            audio.play(); 
+            
+            
+            //compteur.push(color);
             //console.log("df");
         }
     }
     
 }
-
+//Faire un test avec sequence.forEach(start);
 
 let sequence = [];//Creation du tableau "sequence", va se voir via fonction ajouter des couleurs de façon aléatoire
 let score = 0;//creation du score en vue de faire un scoreboard
@@ -55,12 +57,12 @@ function uLoose() {//creation fonction "uLosse"
     newScore.innerText = 'Score: ' + 0; 
     score = 0;  
     y = 0; 
+    return score, y, sequence;
 }
 
 function start() { //definition fonction start
-    genSequence();
-        
-    playing = true;
+    genSequence();//generation de la sequence de maniere aléatoire
+    playing = true;//playing passe à true. Une sécurité pour la fonction userClick. Afin de pouvoir rentrer dans les loops de check de séquence
     console.log("Séquence de victoire : ",sequence);//console log d'une string avec la sequence.
     displaySequence();//appel de la fonction displaySequence().    
 }
