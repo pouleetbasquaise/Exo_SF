@@ -1,11 +1,22 @@
+let compteur = [];
+
 function userClick(color) {
     console.log(color);
     var audio = document.getElementById("audio");
     audio.play();
-    if (userClick = True) {
+    
         
-    }
+     compteur.push(color);
+     console.log(compteur);
+
+
+
+
+//if sequence.lenght == compteur.lenght && position.sequence == position.sequence
+    //ta gagnés sinon t'as perdu 
 }
+
+//avoir un compteur
 
 let sequence = [];//Creation du tableau "sequence", va se voir via fonction ajouter des couleurs de façon aléatoire
 //let humanSequence = [];//Creation du tableau "humanSequence", aura pour but d'enregistrer les input du joueur
@@ -28,6 +39,7 @@ function nextLvl() { //Creation fonction changement de niveau
     score++;//ajout de +1 au score
     upScore();//appel fonction upScore pour le mettre à jour sur le scoreboard    
     start();//relance le jeu
+    compteur = [];
 }
 
 //function checkGen() {//definition fonction checkGen
@@ -50,44 +62,8 @@ function uLoose() {//creation fonction "uLosse"
     alert("Tu as perdu !")//Une alerte explicite
     sequence = [];//reinitialisation de la sequence 
     //humanSequence = [];//reinitialisation d'humanSequence
-    score = 0;//reinitialisation du score
-    
+    score = 0;//reinitialisation du score    
 }
-
-//                  test pour ramener couleur mais fonctionne pas encore
-
-var redColor = "#C70039" ;
-var blueColor = "#56A1D3" ;
-var greenColor = "#2EB867"; 
-var yellowColor = "#F1C40F";
-
-function changeBackgColor(color) {
-    let buttonColor = document.getElementById("carre" + color);
-    buttonColor.style.background = "white";
-}
-
-function restorBackgColor(color) {
-    document.getElementById("carre" + color).style.background
-    if (document.getElementById === "carrerouge") {
-        buttonColor.style.background = redColor;
-    }
-    else if(document.getElementById === "carrebleu"){
-        buttonColor.style.background = blueColor;
-    }
-    else if(document.getElementById === "carrevert"){
-        buttonColor.style.background = greenColor;
-    }
-    else if(document.getElementById === "carrejaune"){
-        buttonColor.style.background = yellowColor;
-    }   
-    else
-        alert("hein...?");
-        
-}
-
-//                  test va jusque la 
-
-
 
 function start() { //definition fonction start
     sequence = []; // creation array sequence
@@ -95,8 +71,7 @@ function start() { //definition fonction start
         genSequence();
     }
     console.log("Séquence de victoire : ",sequence);//console log d'une string avec la sequence.
-    displaySequence();//appel de la fonction displaySequence().
-    
+    displaySequence();//appel de la fonction displaySequence().    
 }
 
 
