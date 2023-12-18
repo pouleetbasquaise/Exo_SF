@@ -48,6 +48,7 @@ function nextLvl() { //Creation fonction changement de niveau
     score++;//ajout de +1 au score
     upScore();//appel fonction upScore pour le mettre à jour sur le scoreboard    
     start();//relance le jeu
+    y = 0;
 }
 
 function uLoose() {//creation fonction "uLosse"
