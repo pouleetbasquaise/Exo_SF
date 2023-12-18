@@ -4,25 +4,19 @@ let y = 0;//placeholder de y valant 0
 
 function userClick(color) {
     if (playing){
-        if (color != sequence[y]){
+        if (color != sequence[y]){//Si color different de la sequence alors... . Le sequence[y] veut dire : L'index Y navigue dans séquence. Dans ce cas, Y = 2 ira dans la position 2 de sequence.
             uLoose();
         }
         else {
             console.log("correct");
-            y++;
+            y++;//incrémente y pour avancer dans l'array. Si Y vaut 0, il gagnera +1 afin d'aller à la position suivante dans l'array.
         }
         
         if (sequence.length == y ) {
             console.log('win');
             nextLvl();
-
-            
             var audio = document.getElementById("audio");
             audio.play(); 
-            
-            
-            //compteur.push(color);
-            //console.log("df");
         }
     }
     
