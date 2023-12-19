@@ -52,6 +52,9 @@ body{
   width: 200px;
   background: linear-gradient(90deg, #C70039, #fd7253);
 }
+#carrerouge:hover{
+  background: linear-gradient(90deg, red, orange);
+}
 
 #carrebleu{
   position: flex;
@@ -63,7 +66,9 @@ body{
   width: 200px;
   background: linear-gradient(90deg,  #56a1d3, #b1d6ee);
 }
-
+#carrebleu:hover{
+  background: linear-gradient(90deg, blue, #b1d6ee);
+}
 #carrevert{
   position: flex;
   left: 10%;
@@ -74,7 +79,9 @@ body{
   width: 200px;
   background: linear-gradient(90deg, #2eb867, #7cf1ad);
 }
-
+#carrevert:hover{
+  background: linear-gradient(90deg, green, #7cf1ad);
+}
 #carrejaune{
   position: flex;
   left: 10%;
@@ -85,13 +92,22 @@ body{
   width: 200px;
   background: linear-gradient(90deg,#f1c40f,#fad7a0);
 }
+#carrejaune:hover{
+  background: linear-gradient(90deg, yellow, orange);
+}
 #start{
   position: relative;
   left: 60%;
   height: 100px;
+  border-radius: 15%;
+  border-width: 30%;
+  border-color: #ecb53d;
   width: 200px;
   transform: translateX(-50%);
   background-color: red;
   background-size: 125px;
 
+}
+#start:hover{
+  background: linear-gradient(180deg, red, orange);
 }

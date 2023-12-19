@@ -42,7 +42,7 @@ function nextLvl() { //Creation fonction changement de niveau
     score++;//ajout de +1 au score
     upScore();//appel fonction upScore pour le mettre à jour sur le scoreboard    
     start();//relance le jeu
-    y = 0;
+    y = 0;//Reset la position de Y pour revenir au du array sequence[]
 }
 
 function uLoose() {//creation fonction "uLosse"
