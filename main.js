@@ -15,7 +15,7 @@ function userClick(color) {
         if (sequence.length == y ) {
             console.log('win');
             nextLvl();
-            var audio = document.getElementById("audio");
+            var audio = document.getElementById("audio" + color);
             audio.play(); 
         }
     }
