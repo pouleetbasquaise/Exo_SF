@@ -3,7 +3,7 @@ let y = 0;//placeholder de y valant 0
 
 
 function userClick(color) {
-    if (playing){
+    if (playing){//jouer avec le playing true false pour que utilisateur puisse pas clicker sur bp
         if (color != sequence[y]){//Si color different de la sequence alors... . Le sequence[y] veut dire : L'index Y navigue dans séquence. Dans ce cas, Y = 2 ira dans la position 2 de sequence.
             uLoose();
         }
@@ -68,7 +68,7 @@ function highlightButton(color) {//definition de la fonction avec en parametre c
     console.log(color); //un console log donnant litteralement chaque couleur une part une
     let buttonColor = document.getElementById("carre" + color);//creation de ma variable buttonColor recherchant dans mon HTML l'ID "carre" avec le parametre couleur. Ca permet d'economiser des lignes de code et de ne pas à avoir ecrire chaque nom.
     console.log(buttonColor);//console log de buttonColor. Donne l'ID complet, quel balise il a et surtout confirme qu'on tombe bien sur le bon bouton.
-    let saveColor = buttonColor.style.background;
+    let saveColor = buttonColor.style.background;//création d'une variable faisant office de mémoire de couleur. Permet de ramener la couleur d'origine .
     buttonColor.style.background = "white";//buttonColor.style.background permet d'accéder au css de l'element. CSS étant du texte, il a compris que "white" est la couleurs voulu
         setTimeout(function() {
             buttonColor.style.background = saveColor;
